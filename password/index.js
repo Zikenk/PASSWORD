@@ -26,4 +26,19 @@ function createPassword() {
 //    rectangleOneEl.textContent += characters[randomCharacter]
 //    rectangleTwoEl.textContent += characters[randomCharacterTwo]
 //    }
+
 }
+
+function copyText(event) {
+    let textContent = event.target.innerText;
+    navigator.clipboard.writeText(textContent)
+    event.target.textContent = "password copied :)"
+}
+
+let password1Button = document.getElementById("password1")
+let password2Button = document.getElementById("password2")
+
+password1Button.addEventListener("click", copyText)
+password2Button.addEventListener("click", copyText)
+
+
